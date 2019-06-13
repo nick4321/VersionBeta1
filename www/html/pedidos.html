@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="menu-bar">
-            <a href="#" class="bt"><span class="icon-menu"></span>BV</a>
+            <a href="#" class="bt"><span class="icon-menu"></span>Bella Vista</a>
         </div>
         <nav>
             <ul>
@@ -29,7 +29,6 @@
         </nav>
     </header>
     <section>
-
         <div class="acciones">
             <form name="form1" method="POST" action="">
 
@@ -39,11 +38,11 @@
                 </fieldset>
             </form>
         </div>
-        <ul id="lista"></ul>
-
+        <ul id="lista">
+            <li id="item"></li>
+        </ul>
 
     </section>
-
 
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
     <script>
@@ -66,19 +65,23 @@
                 var node = document.createElement("LI");                 // Create a <li> node
                 var textnode = document.createTextNode(doc.data().peticiones);         // Create a text node
                 node.appendChild(textnode);                              // Append the text to <li>
-
-
-                var nodoVacio = document.createElement("LI");                 // Create a <li> node
-                var vacio = document.createTextNode("-------------------------------------");         // Create a text node
-                nodoVacio.appendChild(vacio);                            
-
+                   
+                                        
                 document.getElementById("lista").appendChild(node);
-                document.getElementById("lista").appendChild(nodoVacio);
+                
             });
         }).catch(function (error) {
             console.log("Error: ", error);
         });
     </script>
+    <script>
+    const ptr = PullToRefresh.init({
+      mainElement: 'body',
+      onRefresh() {
+        window.location.reload();
+      },
+    });
+  </script>
     <script src="../main.js"></script>
 </body>
 

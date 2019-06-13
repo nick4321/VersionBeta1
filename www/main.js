@@ -17,13 +17,10 @@ function main() {
     }
   });
 }
-
 /**
 $(document).ready(function () {
-
   $("#borrar").click(borrarImg);
   $("#file").change(mostrar);
-
 
 
 });
@@ -44,7 +41,6 @@ $(document).ready(function () {
   }
 }
  */
-
 //pedidos
 function crear(obj) {
   var pedido = document.getElementById('pedido').value;
@@ -55,6 +51,7 @@ function crear(obj) {
       peticiones: pedido,
     })
       .then(function (docRef) {
+        alert("el pedido fue enviado")
       })
       .catch(function (error) {
         console.log("Error: " + error);
